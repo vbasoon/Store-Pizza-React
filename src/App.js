@@ -16,7 +16,7 @@ function App() {
             <div className="content__top">
               <Categories
                 onClickItem={(name) => console.log(name)}
-                items={items}
+                props={items}
               />
               <div className="sort">
                 <div className="sort__label">

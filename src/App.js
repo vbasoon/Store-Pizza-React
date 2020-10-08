@@ -32,19 +32,19 @@ function App() {
                       fill="#2C2C2C"
                     />
                   </svg>
-                  <b>Сортировка по:</b>
-                  <span>популярности</span>
+                  <b>Сортування за:</b>
+                  <span>популярністю</span>
                 </div>
                 <div className="sort__popup">
                   <ul>
-                    <li className="active">популярности</li>
-                    <li>цене</li>
-                    <li>алфавиту</li>
+                    <li className="active">популярність</li>
+                    <li>ціна</li>
+                    <li>алфавіт</li>
                   </ul>
                 </div>
               </div>
             </div>
-            <h2 className="content__title">Все пиццы</h2>
+            <h2 className="content__title">Всі</h2>
             <div className="content__items">
               <div className="pizza-block">
                 <img
@@ -52,11 +52,11 @@ function App() {
                   src="https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg"
                   alt="Pizza"
                 />
-                <h4 className="pizza-block__title">Чизбургер-пицца</h4>
+                <h4 className="pizza-block__title">Чизбурґер-піцца</h4>
                 <div className="pizza-block__selector">
                   <ul>
-                    <li className="active">тонкое</li>
-                    <li>традиционное</li>
+                    <li className="active">тонке</li>
+                    <li>традиційне</li>
                   </ul>
                   <ul>
                     <li className="active">26 см.</li>
@@ -65,7 +65,7 @@ function App() {
                   </ul>
                 </div>
                 <div className="pizza-block__bottom">
-                  <div className="pizza-block__price">от 395 ₽</div>
+                  <div className="pizza-block__price">від 250 грн.</div>
                   <div className="button button--outline button--add">
                     <svg
                       width="12"
@@ -79,7 +79,7 @@ function App() {
                         fill="white"
                       />
                     </svg>
-                    <span>Добавить</span>
+                    <span>Додати</span>
                     <i>2</i>
                   </div>
                 </div>
@@ -90,11 +90,11 @@ function App() {
                   src="https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg"
                   alt="Pizza"
                 />
-                <h4 className="pizza-block__title">Чизбургер-пицца</h4>
+                <h4 className="pizza-block__title">Чизбурґер-піцца</h4>
                 <div className="pizza-block__selector">
                   <ul>
-                    <li className="active">тонкое</li>
-                    <li>традиционное</li>
+                    <li className="active">тонке</li>
+                    <li>традиційне</li>
                   </ul>
                   <ul>
                     <li className="active">26 см.</li>
@@ -103,7 +103,7 @@ function App() {
                   </ul>
                 </div>
                 <div className="pizza-block__bottom">
-                  <div className="pizza-block__price">от 395 ₽</div>
+                  <div className="pizza-block__price">від 250 грн.</div>
                   <div className="button button--outline button--add">
                     <svg
                       width="12"
@@ -117,7 +117,7 @@ function App() {
                         fill="white"
                       />
                     </svg>
-                    <span>Добавить</span>
+                    <span>Додати</span>
                     <i>2</i>
                   </div>
                 </div>
@@ -128,11 +128,11 @@ function App() {
                   src="https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg"
                   alt="Pizza"
                 />
-                <h4 className="pizza-block__title">Чизбургер-пицца</h4>
+                <h4 className="pizza-block__title">Чизбурґер-піцца</h4>
                 <div className="pizza-block__selector">
                   <ul>
-                    <li className="active">тонкое</li>
-                    <li>традиционное</li>
+                    <li className="active">тонке</li>
+                    <li>традиційне</li>
                   </ul>
                   <ul>
                     <li className="active">26 см.</li>
@@ -141,7 +141,7 @@ function App() {
                   </ul>
                 </div>
                 <div className="pizza-block__bottom">
-                  <div className="pizza-block__price">от 395 ₽</div>
+                  <div className="pizza-block__price">від 250 грн.</div>
                   <div className="button button--outline button--add">
                     <svg
                       width="12"
@@ -155,7 +155,7 @@ function App() {
                         fill="white"
                       />
                     </svg>
-                    <span>Добавить</span>
+                    <span>Додати</span>
                     <i>2</i>
                   </div>
                 </div>
@@ -166,11 +166,11 @@ function App() {
                   src="https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg"
                   alt="Pizza"
                 />
-                <h4 className="pizza-block__title">Чизбургер-пицца</h4>
+                <h4 className="pizza-block__title">Чизбурґер-піцца</h4>
                 <div className="pizza-block__selector">
                   <ul>
-                    <li className="active">тонкое</li>
-                    <li>традиционное</li>
+                    <li className="active">тонке</li>
+                    <li>традиційне</li>
                   </ul>
                   <ul>
                     <li className="active">26 см.</li>
@@ -179,7 +179,7 @@ function App() {
                   </ul>
                 </div>
                 <div className="pizza-block__bottom">
-                  <div className="pizza-block__price">от 395 ₽</div>
+                  <div className="pizza-block__price">від 250 грн.</div>
                   <div className="button button--outline button--add">
                     <svg
                       width="12"
@@ -193,7 +193,7 @@ function App() {
                         fill="white"
                       />
                     </svg>
-                    <span>Добавить</span>
+                    <span>Додати</span>
                     <i>2</i>
                   </div>
                 </div>
@@ -204,11 +204,11 @@ function App() {
                   src="https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg"
                   alt="Pizza"
                 />
-                <h4 className="pizza-block__title">Чизбургер-пицца</h4>
+                <h4 className="pizza-block__title">Чизбурґер-піцца</h4>
                 <div className="pizza-block__selector">
                   <ul>
-                    <li className="active">тонкое</li>
-                    <li>традиционное</li>
+                    <li className="active">тонке</li>
+                    <li>традиційне</li>
                   </ul>
                   <ul>
                     <li className="active">26 см.</li>
@@ -217,7 +217,7 @@ function App() {
                   </ul>
                 </div>
                 <div className="pizza-block__bottom">
-                  <div className="pizza-block__price">от 395 ₽</div>
+                  <div className="pizza-block__price">від 250 грн.</div>
                   <div className="button button--outline button--add">
                     <svg
                       width="12"
@@ -231,7 +231,7 @@ function App() {
                         fill="white"
                       />
                     </svg>
-                    <span>Добавить</span>
+                    <span>Додати</span>
                     <i>2</i>
                   </div>
                 </div>
@@ -242,11 +242,11 @@ function App() {
                   src="https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg"
                   alt="Pizza"
                 />
-                <h4 className="pizza-block__title">Чизбургер-пицца</h4>
+                <h4 className="pizza-block__title">Чизбурґер-піцца</h4>
                 <div className="pizza-block__selector">
                   <ul>
-                    <li className="active">тонкое</li>
-                    <li>традиционное</li>
+                    <li className="active">тонке</li>
+                    <li>традиційне</li>
                   </ul>
                   <ul>
                     <li className="active">26 см.</li>
@@ -255,7 +255,7 @@ function App() {
                   </ul>
                 </div>
                 <div className="pizza-block__bottom">
-                  <div className="pizza-block__price">от 395 ₽</div>
+                  <div className="pizza-block__price">від 250 грн.</div>
                   <div className="button button--outline button--add">
                     <svg
                       width="12"
@@ -269,7 +269,7 @@ function App() {
                         fill="white"
                       />
                     </svg>
-                    <span>Добавить</span>
+                    <span>Додати</span>
                     <i>2</i>
                   </div>
                 </div>
@@ -280,11 +280,11 @@ function App() {
                   src="https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg"
                   alt="Pizza"
                 />
-                <h4 className="pizza-block__title">Чизбургер-пицца</h4>
+                <h4 className="pizza-block__title">Чизбурґер-піцца</h4>
                 <div className="pizza-block__selector">
                   <ul>
-                    <li className="active">тонкое</li>
-                    <li>традиционное</li>
+                    <li className="active">тонке</li>
+                    <li>традиційне</li>
                   </ul>
                   <ul>
                     <li className="active">26 см.</li>
@@ -293,7 +293,7 @@ function App() {
                   </ul>
                 </div>
                 <div className="pizza-block__bottom">
-                  <div className="pizza-block__price">от 395 ₽</div>
+                  <div className="pizza-block__price">від 250 грн.</div>
                   <div className="button button--outline button--add">
                     <svg
                       width="12"
@@ -307,7 +307,7 @@ function App() {
                         fill="white"
                       />
                     </svg>
-                    <span>Добавить</span>
+                    <span>Додати</span>
                     <i>2</i>
                   </div>
                 </div>
@@ -318,11 +318,11 @@ function App() {
                   src="https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg"
                   alt="Pizza"
                 />
-                <h4 className="pizza-block__title">Чизбургер-пицца</h4>
+                <h4 className="pizza-block__title">Чизбурґер-піцца</h4>
                 <div className="pizza-block__selector">
                   <ul>
-                    <li className="active">тонкое</li>
-                    <li>традиционное</li>
+                    <li className="active">тонке</li>
+                    <li>традиційне</li>
                   </ul>
                   <ul>
                     <li className="active">26 см.</li>
@@ -331,7 +331,7 @@ function App() {
                   </ul>
                 </div>
                 <div className="pizza-block__bottom">
-                  <div className="pizza-block__price">от 395 ₽</div>
+                  <div className="pizza-block__price">від 250 грн.</div>
                   <div className="button button--outline button--add">
                     <svg
                       width="12"
@@ -345,7 +345,7 @@ function App() {
                         fill="white"
                       />
                     </svg>
-                    <span>Добавить</span>
+                    <span>Додати</span>
                     <i>2</i>
                   </div>
                 </div>
@@ -356,11 +356,11 @@ function App() {
                   src="https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg"
                   alt="Pizza"
                 />
-                <h4 className="pizza-block__title">Чизбургер-пицца</h4>
+                <h4 className="pizza-block__title">Чизбурґер-піцца</h4>
                 <div className="pizza-block__selector">
                   <ul>
-                    <li className="active">тонкое</li>
-                    <li>традиционное</li>
+                    <li className="active">тонке</li>
+                    <li>традиційне</li>
                   </ul>
                   <ul>
                     <li className="active">26 см.</li>
@@ -369,7 +369,7 @@ function App() {
                   </ul>
                 </div>
                 <div className="pizza-block__bottom">
-                  <div className="pizza-block__price">от 395 ₽</div>
+                  <div className="pizza-block__price">від 250 грн.</div>
                   <div className="button button--outline button--add">
                     <svg
                       width="12"
@@ -383,7 +383,7 @@ function App() {
                         fill="white"
                       />
                     </svg>
-                    <span>Добавить</span>
+                    <span>Додати</span>
                     <i>2</i>
                   </div>
                 </div>

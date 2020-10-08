@@ -1,8 +1,10 @@
 import React from "react";
 
 const SortBlock = () => {
+  const [visiblePopup, setvisiblePopup] = React.useState(false);
+
   return (
-    <div>
+    <>
       <div className="sort">
         <div className="sort__label">
           <svg
@@ -18,17 +20,21 @@ const SortBlock = () => {
             />
           </svg>
           <b>Сортування за:</b>
-          <span>популярністю</span>
+          <span onClick={() => setvisiblePopup(!visiblePopup)}>
+            популярністю
+          </span>
         </div>
-        <div className="sort__popup">
-          <ul>
-            <li className="active">популярність</li>
-            <li>ціна</li>
-            <li>алфавіт</li>
-          </ul>
-        </div>
+        {visiblePopup && (
+          <div className="sort__popup">
+            <ul>
+              <li className="active">популярністю</li>
+              <li>ціною</li>
+              <li>алфавітом</li>
+            </ul>
+          </div>
+        )}
       </div>
-    </div>
+    </>
   );
 };
 

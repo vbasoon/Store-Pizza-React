@@ -43,11 +43,11 @@ const Categories = (items, onClickItem) => {
     <div>
       <div className="categories">
         <ul>
-          <li>Всi</li>
+          <li className={activeItem === null ? "active" : ""}>Всi</li>
           {items.items.map((name, index) => (
             <li
               className={activeItem === index ? "active" : ""}
-              onClick={() => setActiveItem(index)}
+              onClick={() => onSelectItem(index)}
               key={`${name}_${index}`}
             >
               {name}

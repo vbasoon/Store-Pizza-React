@@ -1,11 +1,33 @@
 import React from "react";
 
-const SortBlock = () => {
+sortconst SortBlock = (sortpopup) => {
   const [visiblePopup, setvisiblePopup] = React.useState(false);
+  const [activeItem, setActiveItem] = React.useState(0);
+  const sortRef = React.useRef();
+ 
+  const toggleVisiblePopup = () => {
+    setvisiblePopup(!visiblePopup);
+  };
+
+  const handleClick = (e) => {
+    if (!e.path.includes(sortRef.current)) {
+      setvisiblePopup(false);
+      console.log("outside");
+    }
+  };
+
+  const onSelectItem = (index) => {
+    setActiveItem(index);
+  };
+
+
+  React.useEffect(() => {
+    document.body.addEventListener("click", handleClick);
+  }, []);
 
   return (
     <>
-      <div className="sort">
+      <div ref={sortRef} className="sort">
         <div className="sort__label">
           <svg
             width="10"
@@ -20,16 +42,21 @@ const SortBlock = () => {
             />
           </svg>
           <b>Сортування за:</b>
-          <span onClick={() => setvisiblePopup(!visiblePopup)}>
-            популярністю
-          </span>
+          <span onClick={toggleVisiblePopup}>популярністю</span>
         </div>
         {visiblePopup && (
           <div className="sort__popup">
             <ul>
-              <li className="active">популярністю</li>
-              <li>ціною</li>
-              <li>алфавітом</li>
+            {sortpopup &&
+            sortpopup.sortpopup.map((name, index) => (
+              <li
+                className={activeItem === index ? "active" : ""}
+                onClick={() => onSelectItem(index)}
+                key={`${name}_${index}`}
+              >
+                {name}
+              </li>
+            ))}
             </ul>
           </div>
         )}

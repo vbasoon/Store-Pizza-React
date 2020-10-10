@@ -6,6 +6,8 @@ import { Header, Categories, SortBlock } from "./components";
 
 const items = ["М'ясні", "Вегетаріанські", "Гриль", "Гострі", "Закриті"];
 
+const sortPopup = ["популярністю", "ціною", "алфавітом"];
+
 function App() {
   return (
     <div className="App">
@@ -18,7 +20,7 @@ function App() {
                 onClickItem={(name) => console.log(name)}
                 items={items}
               />
-              <SortBlock />
+              <SortBlock sortpopup={sortPopup} />
             </div>
             <h2 className="content__title">Всі</h2>
             <div className="content__items">

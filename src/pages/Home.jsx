@@ -1,17 +1,17 @@
 import React from 'react'
 
-addimport { Categories, SortBlock } from "./components";
+import { Categories, SortBlock } from "../components";
 
-const Home = () => {
+const Home = (props) => {
    return (
       <div>
          <div className="container">
             <div className="content__top">
               <Categories
                 onClickItem={(name) => console.log(name)}
-                items={items}
+                items={props.items}
               />
-              <SortBlock sortpopup={sortPopup} />
+              <SortBlock sortpopup={props.sortpopup} />
             </div>
             <h2 className="content__title">Всі</h2>
             <div className="content__items">

@@ -15,7 +15,7 @@ function App() {
       <div className="wrapper">
         <Header />
         <div className="content">
-          <Home />
+          <Home items={items} sortpopup={sortPopup}/>
         </div>
       </div>
     </div>

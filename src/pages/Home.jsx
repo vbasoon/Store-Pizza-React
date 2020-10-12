@@ -1,10 +1,11 @@
 import React from 'react'
 
+addimport { Categories, SortBlock } from "./components";
+
 const Home = () => {
    return (
       <div>
-         <div className="content">
-          <div className="container">
+         <div className="container">
             <div className="content__top">
               <Categories
                 onClickItem={(name) => console.log(name)}
@@ -320,7 +321,6 @@ const Home = () => {
               </div>
             </div>
           </div>
-        </div>
       </div>
    )
 }

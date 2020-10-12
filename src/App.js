@@ -3,7 +3,7 @@ import React from "react";
 import "./App.css";
 
 import { Header } from "./components";
-import Home from "./pages/Home";
+import {Home} from "./pages";
 
 const items = ["М'ясні", "Вегетаріанські", "Гриль", "Гострі", "Закриті"];
 

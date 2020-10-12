@@ -1,9 +1,10 @@
 import React from "react";
 
-sortconst SortBlock = (sortpopup) => {
+const SortBlock = ({sortpopup}) => {
   const [visiblePopup, setvisiblePopup] = React.useState(false);
   const [activeItem, setActiveItem] = React.useState(0);
   const sortRef = React.useRef();
+  const activeLabel=sortpopup[activeItem];
  
   const toggleVisiblePopup = () => {
     setvisiblePopup(!visiblePopup);
@@ -18,6 +19,7 @@ sortconst SortBlock = (sortpopup) => {
 
   const onSelectItem = (index) => {
     setActiveItem(index);
+    setvisiblePopup(false);
   };
 
 
@@ -42,16 +44,15 @@ sortconst SortBlock = (sortpopup) => {
             />
           </svg>
           <b>Сортування за:</b>
-          <span onClick={toggleVisiblePopup}>популярністю</span>
+          <span onClick={toggleVisiblePopup}>{activeLabel}</span>
         </div>
         {visiblePopup && (
           <div className="sort__popup">
             <ul>
             {sortpopup &&
-            sortpopup.sortpopup.map((name, index) => (
-              <li
+            sortpopup.map((name, index) => (
+              <li onClick={() => onSelectItem(index)}
                 className={activeItem === index ? "active" : ""}
-                onClick={() => onSelectItem(index)}
                 key={`${name}_${index}`}
               >
                 {name}

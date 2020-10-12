@@ -1,5 +1,6 @@
 import React from "react";
 
+
 const SortBlock = ({sortpopup}) => {
   const [visiblePopup, setvisiblePopup] = React.useState(false);
   const [activeItem, setActiveItem] = React.useState(0);
@@ -32,6 +33,7 @@ const SortBlock = ({sortpopup}) => {
       <div ref={sortRef} className="sort">
         <div className="sort__label">
           <svg
+          className={visiblePopup ? 'rotated' : ''}
             width="10"
             height="6"
             viewBox="0 0 10 6"

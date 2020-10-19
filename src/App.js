@@ -6,7 +6,7 @@ import "./App.css";
 import { Header } from "./components";
 import { Home, Cart, } from "./pages";
 
-const items = ["М'ясні", "Вегетаріанські", "Гриль", "Гострі", "Закриті"];
+const categories = ["М'ясні", "Вегетаріанські", "Гриль", "Гострі", "Закриті"];
 
 const sortPopup = ["популярністю", "ціною", "алфавітом"];
 
@@ -28,7 +28,7 @@ function App() {
         <Header />
 
         <div className="content">
-          <Route exact path="/" render={() => <Home items={items} sortpopup={sortPopup} />} />
+          <Route exact path="/" render={() => <Home categories={categories} sortpopup={sortPopup} items={pizzas} />} />
           <Route exact path="/cart" render={() => <Cart />} />
 
           {/* <Home items={items} sortpopup={sortPopup} />

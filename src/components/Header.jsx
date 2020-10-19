@@ -5,15 +5,15 @@ function Header() {
   return (
     <div className="header">
       <div className="container">
-        <div className="header__logo">
-          <Link to="/">
+        <Link to="/">
+          <div className="header__logo">
             <img width="70" src="./img/pizza-logo.png" alt="Pizza logo" />
-          </Link>
-          <div>
-            <h1>Universe Pizza</h1>
-            <p>Cмачна піцца</p>
+            <div>
+              <h1>Universe Pizza</h1>
+              <p>Cмачна піцца</p>
+            </div>
           </div>
-        </div>
+        </Link>
         <div className="header__cart">
           <Link to="/cart" className="button button--cart">
             <span>550 грн.</span>

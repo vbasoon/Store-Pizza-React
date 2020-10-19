@@ -11,6 +11,17 @@ const items = ["М'ясні", "Вегетаріанські", "Гриль", "Г�
 const sortPopup = ["популярністю", "ціною", "алфавітом"];
 
 function App() {
+
+  const [pizzas, setState] = React.useState([]);
+
+  React.useEffect(() => {
+    fetch('http://localhost:3001/db.json')
+      .then((resp) => resp.json())
+      .then(json => {
+        setState(json.pizzas);
+      });
+
+  }, []);
   return (
     <div className="App">
       <div className="wrapper">

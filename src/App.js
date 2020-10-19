@@ -4,7 +4,7 @@ import { Route } from "react-router";
 import "./App.css";
 
 import { Header } from "./components";
-import { Home, Cart } from "./pages";
+import { Home, Cart, } from "./pages";
 
 const items = ["М'ясні", "Вегетаріанські", "Гриль", "Гострі", "Закриті"];
 

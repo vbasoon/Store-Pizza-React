@@ -1,28 +1,37 @@
+import { types } from '@babel/core';
 import React from 'react'
 
-const PizzaBlock = () => {
+const PizzaBlock = (props) => {
+   const types = ['тонке', 'традиційне'];
+   const [activeType, setActiveType] = React.useState(0);
+
+   const onSelectType = (index) => {
+      setActiveType(index);
+   };
+
    return (
       <div>
          <div className="pizza-block">
             <img
                className="pizza-block__image"
-               src="https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg"
+               src={props.imageUrl}
                alt="Pizza"
             />
-            <h4 className="pizza-block__title">Чизбурґер-піцца</h4>
+            <h4 className="pizza-block__title">{props.name}</h4>
             <div className="pizza-block__selector">
                <ul>
-                  <li className="active">тонке</li>
-                  <li>традиційне</li>
+
+                  <li className={activeType === 0 ? 'active' : ''}>тонке</li>
+                  <li className="disabled">традиційне</li>
                </ul>
                <ul>
                   <li className="active">26 см.</li>
-                  <li>30 см.</li>
+                  <li className="disabled">30 см.</li>
                   <li>40 см.</li>
                </ul>
             </div>
             <div className="pizza-block__bottom">
-               <div className="pizza-block__price">від 250 грн.</div>
+               <div className="pizza-block__price">від {props.price} грн.</div>
                <div className="button button--outline button--add">
                   <svg
                      width="12"

@@ -15,7 +15,7 @@ function App() {
   const [pizzas, setState] = React.useState([]);
 
   React.useEffect(() => {
-    fetch('http://localhost:3001/db.json')
+    fetch('http://localhost:3000/db.json')
       .then((resp) => resp.json())
       .then(json => {
         setState(json.pizzas);

@@ -87,8 +87,8 @@ PizzaBlock.propTypes = {
    //    id: PropTypes.number,
    name: PropTypes.string.isRequired,
    imageUrl: PropTypes.string.isRequired,
-   types: PropTypes.array.isRequired,
-   sizes: PropTypes.array.isRequired,
+   types: PropTypes.arrayOf(PropTypes.number).isRequired,
+   sizes: PropTypes.arrayOf(PropTypes.number).isRequired,
    price: PropTypes.number,
    category: PropTypes.number,
    rating: PropTypes.number

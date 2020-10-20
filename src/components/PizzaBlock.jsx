@@ -20,9 +20,9 @@ const PizzaBlock = (props) => {
             <h4 className="pizza-block__title">{props.name}</h4>
             <div className="pizza-block__selector">
                <ul>
-
-                  <li className={activeType === 0 ? 'active' : ''}>тонке</li>
-                  <li className="disabled">традиційне</li>
+                  {types.map((type, index) => (
+                     <li onClick={() =>} className={activeType === index ? 'active' : ''}>{type}</li>
+                  ))}
                </ul>
                <ul>
                   <li className="active">26 см.</li>

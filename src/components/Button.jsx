@@ -1,7 +1,12 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 const Button = () => {
   return <button>Add</button>;
 };
+
+Button.propTypes = {
+  onClick: propTypes.func
+}
 
 export default Button;

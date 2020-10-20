@@ -94,4 +94,11 @@ PizzaBlock.propTypes = {
    rating: PropTypes.number
 };
 
+PizzaBlock.defauitProps = {
+   name: '---',
+   price: 0,
+   types: [],
+   sizes: [],
+};
+
 export default PizzaBlock

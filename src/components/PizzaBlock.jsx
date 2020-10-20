@@ -2,7 +2,7 @@ import { types } from '@babel/core';
 import React from 'react'
 
 const PizzaBlock = (props) => {
-   const types = ['тонке', 'традиційне'];
+   const typesNames = ['тонке', 'традиційне'];
    const [activeType, setActiveType] = React.useState(0);
 
    const onSelectType = (index) => {
@@ -19,9 +19,10 @@ const PizzaBlock = (props) => {
             />
             <h4 className="pizza-block__title">{props.name}</h4>
             <div className="pizza-block__selector">
+               console.log(props.types)
                <ul>
-                  {types.map((type, index) => (
-                     <li onClick={() => onSelectType(index)} className={activeType === index ? 'active' : ''}>{type}</li>
+                  {typesNames.map((type, index) => (
+                     <li key={type} onClick={() => onSelectType(index)} className={activeType === index ? 'active' : ''}>{type}</li>
                   ))}
                </ul>
                <ul>

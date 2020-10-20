@@ -1,6 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
-
+import PropTypes from 'prop-types';
+import { types } from '@babel/core';
 
 const PizzaBlock = (props) => {
    const typesNames = ['тонке', 'традиційне'];
@@ -81,5 +82,16 @@ const PizzaBlock = (props) => {
       </div>
    )
 }
+
+PizzaBlock.propTypes = {
+   //    id: PropTypes.number,
+   name: PropTypes.string.isRequired,
+   imageUrl: PropTypes.string,
+   types: PropTypes.number,
+   sizes: PropTypes.number,
+   price: PropTypes.number,
+   category: PropTypes.number,
+   rating: PropTypes.number
+};
 
 export default PizzaBlock

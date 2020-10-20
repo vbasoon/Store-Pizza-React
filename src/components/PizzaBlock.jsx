@@ -86,9 +86,9 @@ const PizzaBlock = (props) => {
 PizzaBlock.propTypes = {
    //    id: PropTypes.number,
    name: PropTypes.string.isRequired,
-   imageUrl: PropTypes.string,
-   types: PropTypes.number,
-   sizes: PropTypes.number,
+   imageUrl: PropTypes.string.isRequired,
+   types: PropTypes.array.isRequired,
+   sizes: PropTypes.array.isRequired,
    price: PropTypes.number,
    category: PropTypes.number,
    rating: PropTypes.number

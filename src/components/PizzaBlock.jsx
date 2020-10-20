@@ -1,13 +1,21 @@
-import { types } from '@babel/core';
-import React from 'react'
+import React from 'react';
+import classNames from 'classnames';
+
 
 const PizzaBlock = (props) => {
    const typesNames = ['тонке', 'традиційне'];
-   const [activeType, setActiveType] = React.useState(0);
+   const availableSizes = [26, 30, 40];
+   const [activeType, setActiveType] = React.useState(props.types[0]);
+   const [activeSize, setActiveSize] = React.useState(props.sizes[0]);
 
    const onSelectType = (index) => {
       setActiveType(index);
    };
+
+   const onSelectSize = (index) => {
+      setActiveSize(index);
+   };
+
 
    return (
       <div>
@@ -19,16 +27,33 @@ const PizzaBlock = (props) => {
             />
             <h4 className="pizza-block__title">{props.name}</h4>
             <div className="pizza-block__selector">
-               console.log(props.types)
+
                <ul>
                   {typesNames.map((type, index) => (
-                     <li key={type} onClick={() => onSelectType(index)} className={activeType === index ? 'active' : ''}>{type}</li>
+                     <li
+                        key={type}
+                        onClick={() => onSelectType(index)}
+                        className={classNames({
+                           active: activeType === index,
+                           disabled: !props.types.includes(index),
+                        })}
+                     >{type}</li>
                   ))}
                </ul>
                <ul>
-                  <li className="active">26 см.</li>
+                  {availableSizes.map((size, index) => (
+                     <li
+                        key={size}
+                        onClick={() => onSelectSize(index)}
+                        className={classNames({
+                           active: activeSize === index,
+                           disabled: !props.sizes.includes(size),
+                        })}
+                     >{size} cm.</li>
+                  ))}
+                  {/* <li className="active">26 см.</li>
                   <li className="disabled">30 см.</li>
-                  <li>40 см.</li>
+                  <li>40 см.</li> */}
                </ul>
             </div>
             <div className="pizza-block__bottom">

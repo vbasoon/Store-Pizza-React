@@ -21,7 +21,7 @@ const PizzaBlock = (props) => {
             <div className="pizza-block__selector">
                <ul>
                   {types.map((type, index) => (
-                     <li onClick={() =>} className={activeType === index ? 'active' : ''}>{type}</li>
+                     <li onClick={() => onSelectType(index)} className={activeType === index ? 'active' : ''}>{type}</li>
                   ))}
                </ul>
                <ul>

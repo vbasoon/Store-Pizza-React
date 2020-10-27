@@ -9,7 +9,9 @@ import { Home, Cart, } from "./pages";
 
 const categories = ["М'ясні", "Вегетаріанські", "Гриль", "Гострі", "Закриті"];
 
-const sortPopup = ["популярністю", "ціною", "алфавітом"];
+const sortPopup = [{ name: "популярністю", type: "popular" },
+{ name: "ціною", type: "price" },
+{ name: "алфавітом", type: "alphabet" }];
 
 function App() {
 

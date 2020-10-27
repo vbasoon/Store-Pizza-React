@@ -2,11 +2,15 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router } from 'react-router-dom'
 import store from './redux/store'
+import { Provider } from 'react-redux'
 
 import "./scss/app.scss";
-
 import App from "./App";
-import Button from './components/Button';
+
+store.dispatch({
+  type: 'SE_SORT_BY',
+  payload: 'price'
+})
 
 const inc = () => {
   store.dispatch({
@@ -24,8 +28,10 @@ store.subscribe(() => {
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <button onClick={inc}>+1</button>
-      <App />
+      <Provider store={store}>
+        <button onClick={inc}>+1</button>
+        <App />
+      </Provider>
     </Router>
   </React.StrictMode>,
   document.getElementById("root")

@@ -1,17 +1,15 @@
-import React from 'react'
-import { createStore } from 'redux'
+import { createStore, combineReducers } from 'redux';
 
-function counter(state = 0, action) {
-   switch (action.type) {
-      case 'Додати':
-         return state + 1
-      case 'Відняти':
-         return state - 1
-      default:
-         return state
-   }
-}
+import filtersReducer from './reducers/filters'
+import itemsReducer from './reducers/items'
 
-const store = createStore(counter);
+const rootReducer = combineReducers({
+   filtersReducer,
+   itemsReducer
+})
+
+const store = createStore(rootReducer)
+
+
 
 export default store

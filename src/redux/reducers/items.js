@@ -1,7 +1,6 @@
-
-import items from './items';
 const initialState = {
-   items: []
+   items: [],
+   isLoaded: false
 };
 
 const items = (state = initialState, action) => {
@@ -10,6 +9,7 @@ const items = (state = initialState, action) => {
       return {
          ...state,
          items: action.payload,
+         isLoaded: true
       }
    }
    return state;

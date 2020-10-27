@@ -1,12 +1,12 @@
 import React from "react";
 
 
-const SortBlock = ({sortpopup}) => {
+const SortBlock = ({ sortpopup }) => {
   const [visiblePopup, setvisiblePopup] = React.useState(false);
   const [activeItem, setActiveItem] = React.useState(0);
   const sortRef = React.useRef();
-  const activeLabel=sortpopup[activeItem];
- 
+  const activeLabel = sortpopup[activeItem];
+
   const toggleVisiblePopup = () => {
     setvisiblePopup(!visiblePopup);
   };
@@ -14,7 +14,7 @@ const SortBlock = ({sortpopup}) => {
   const handleClick = (e) => {
     if (!e.path.includes(sortRef.current)) {
       setvisiblePopup(false);
-      console.log("outside");
+
     }
   };
 
@@ -33,7 +33,7 @@ const SortBlock = ({sortpopup}) => {
       <div ref={sortRef} className="sort">
         <div className="sort__label">
           <svg
-          className={visiblePopup ? 'rotated' : ''}
+            className={visiblePopup ? 'rotated' : ''}
             width="10"
             height="6"
             viewBox="0 0 10 6"
@@ -51,15 +51,15 @@ const SortBlock = ({sortpopup}) => {
         {visiblePopup && (
           <div className="sort__popup">
             <ul>
-            {sortpopup &&
-            sortpopup.map((name, index) => (
-              <li onClick={() => onSelectItem(index)}
-                className={activeItem === index ? "active" : ""}
-                key={`${name}_${index}`}
-              >
-                {name}
-              </li>
-            ))}
+              {sortpopup &&
+                sortpopup.map((name, index) => (
+                  <li onClick={() => onSelectItem(index)}
+                    className={activeItem === index ? "active" : ""}
+                    key={`${name}_${index}`}
+                  >
+                    {name}
+                  </li>
+                ))}
             </ul>
           </div>
         )}

@@ -3,9 +3,9 @@ import { createStore } from 'redux'
 
 function counter(state = 0, action) {
    switch (action.type) {
-      case 'INCREMENT':
+      case 'Додати':
          return state + 1
-      case 'DECREMENT':
+      case 'Відняти':
          return state - 1
       default:
          return state

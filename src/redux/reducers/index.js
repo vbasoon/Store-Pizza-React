@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
 
-import filtersReducer from './reducers/filters'
-import itemsReducer from './reducers/items'
+import filtersReducer from './filters'
+import itemsReducer from './items'
 
 const rootReducer = combineReducers({
    filtersReducer,
    itemsReducer
 })
 
-export default store
+export default rootReducer

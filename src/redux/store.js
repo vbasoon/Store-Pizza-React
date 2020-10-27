@@ -1,15 +1,9 @@
-import { createStore, combineReducers } from 'redux';
+import { createStore } from 'redux';
 
-import filtersReducer from './reducers/filters'
-import itemsReducer from './reducers/items'
-
-const rootReducer = combineReducers({
-   filtersReducer,
-   itemsReducer
-})
+import rootReducer from './reducers'
 
 const store = createStore(rootReducer)
 
+window.store = store;
 
-
-export default store
+export default store;

@@ -3,7 +3,7 @@ import { Route } from "react-router";
 import axios from 'axios'
 import { connect } from "react-redux";
 //import store from "./redux/store";
-import { setItems } from "./redux/actions/items";
+import { setItems as setItemsAction } from "./redux/actions/items";
 
 import "./App.css";
 
@@ -34,8 +34,7 @@ class App extends React.Component {
   componentDidMount() {
     axios.get('http://localhost:3000/db.json')
       .then(({ data }) => {
-        window.store.dispatch(setItems(data.pizzas))
-
+        this.props.setItems(data.pizzas);
       });
   }
 
@@ -61,4 +60,11 @@ const mapStateToProps = (state) => {
   }
 };
 
-export default connect(mapStateToProps)(App);
+const mapDispatchToProps = dispatch => {
+  return {
+    setItems: (items) => dispatch(setItemsAction(items))
+  }
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

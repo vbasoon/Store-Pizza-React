@@ -13,38 +13,34 @@ const sortPopup = [{ name: "популярністю", type: "popular" },
 { name: "ціною", type: "price" },
 { name: "алфавітом", type: "alphabet" }];
 
-function App() {
+// function App() {
 
-  const [pizzas, setState] = React.useState([]);
+//   const [pizzas, setState] = React.useState([]);
 
-  React.useEffect(() => {
-    axios.get('http://localhost:3000/db.json')
-      .then(({ data }) => {
-        setState(data.pizzas)
-      })
-    // fetch('http://localhost:3000/db.json')
-    //   .then((resp) => resp.json())
-    //   .then(json => {
-    //     setState(json.pizzas);
-    //   });
+//   React.useEffect(() => {
+//     axios.get('http://localhost:3000/db.json')
+//       .then(({ data }) => {
+//         setState(data.pizzas)
+//       })
+//   }, []);
+//   return;
+// }
 
-  }, []);
-  return (
-    <div className="App">
-      <div className="wrapper">
-        <Header />
+class App extends React.Component {
+  render() {
+    return (
+      <div className="App">
+        <div className="wrapper">
+          <Header />
 
-        <div className="content">
-          <Route exact path="/" render={() => <Home categories={categories} sortpopup={sortPopup} items={pizzas} />} />
-          <Route exact path="/cart" render={() => <Cart />} />
-
-          {/* <Home items={items} sortpopup={sortPopup} />
-          <Cart /> */}
-
+          <div className="content">
+            <Route exact path="/" render={() => <Home categories={categories} sortpopup={sortPopup} items={[]} />} />
+            <Route exact path="/cart" render={() => <Cart />} />
+          </div>
         </div>
       </div>
-    </div>
-  );
+    )
+  }
 }
 
 export default App;

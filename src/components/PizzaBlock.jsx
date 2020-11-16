@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import { types } from '@babel/core';
+
 
 const PizzaBlock = (props) => {
    const typesNames = ['тонке', 'традиційне'];

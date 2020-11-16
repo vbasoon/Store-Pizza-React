@@ -4,8 +4,8 @@ import filtersReducer from './filters'
 import itemsReducer from './items'
 
 const rootReducer = combineReducers({
-   filtersReducer,
-   itemsReducer
-})
+   filters: filtersReducer,
+   items: itemsReducer
+});
 
 export default rootReducer

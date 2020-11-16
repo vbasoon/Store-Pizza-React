@@ -1,7 +1,9 @@
 import React from "react";
 import { Route } from "react-router";
 import axios from 'axios'
-import store from "./redux/store";
+import { connect } from "react-redux";
+//import store from "./redux/store";
+import { setItems } from "./redux/actions/items";
 
 import "./App.css";
 
@@ -32,9 +34,8 @@ class App extends React.Component {
   componentDidMount() {
     axios.get('http://localhost:3000/db.json')
       .then(({ data }) => {
-        store.dispatch({
+        window.store.dispatch(setItems(data.pizzas))
 
-        });
       });
   }
 
@@ -54,4 +55,11 @@ class App extends React.Component {
   }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  console.log(state, 'App mapStateToProps')
+  return {
+    items: state.items
+  }
+};
+
+export default connect(mapStateToProps)(App);

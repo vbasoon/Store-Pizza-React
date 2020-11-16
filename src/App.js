@@ -46,7 +46,7 @@ class App extends React.Component {
           <Header />
 
           <div className="content">
-            <Route exact path="/" render={() => <Home categories={categories} sortpopup={sortPopup} items={[]} />} />
+            <Route exact path="/" render={() => <Home categories={categories} sortpopup={sortPopup} items={this.props.items} />} />
             <Route exact path="/cart" render={() => <Cart />} />
           </div>
         </div>
@@ -56,9 +56,8 @@ class App extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log(state, 'App mapStateToProps')
   return {
-    items: state.items
+    items: state.items.items
   }
 };
 

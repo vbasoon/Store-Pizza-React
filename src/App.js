@@ -1,6 +1,7 @@
 import React from "react";
 import { Route } from "react-router";
 import axios from 'axios'
+import store from "./redux/store";
 
 import "./App.css";
 
@@ -27,6 +28,16 @@ const sortPopup = [{ name: "популярністю", type: "popular" },
 // }
 
 class App extends React.Component {
+
+  componentDidMount() {
+    axios.get('http://localhost:3000/db.json')
+      .then(({ data }) => {
+        store.dispatch({
+
+        });
+      });
+  }
+
   render() {
     return (
       <div className="App">

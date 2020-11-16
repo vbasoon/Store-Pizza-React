@@ -3,7 +3,7 @@ import { Route } from "react-router";
 import axios from 'axios'
 import { connect } from "react-redux";
 //import store from "./redux/store";
-import { setItems as setItemsAction } from "./redux/actions/items";
+import { setItems } from "./redux/actions/items";
 
 import "./App.css";
 
@@ -60,11 +60,11 @@ const mapStateToProps = (state) => {
   }
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    setItems: (items) => dispatch(setItemsAction(items))
-  }
-}
+const mapDispatchToProps = {
+
+  setItems,
+
+};
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

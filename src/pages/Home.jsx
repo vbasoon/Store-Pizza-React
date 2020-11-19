@@ -18,7 +18,7 @@ const Home = ({ categories, sortpopup, items }) => {
         <h2 className="content__title">Всі</h2>
         <div className="content__items">
           {
-            items.map((obj) => (
+            items && items.map((obj) => (
               <PizzaBlock key={obj.id} {...obj} />
             ))
           }

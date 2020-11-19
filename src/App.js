@@ -1,7 +1,7 @@
 import React from "react";
 import { Route } from "react-router";
 import axios from 'axios'
-import { connect } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 //import store from "./redux/store";
 import { setItems } from "./redux/actions/items";
 
@@ -17,10 +17,20 @@ const sortPopup = [{ name: "популярністю", type: "popular" },
 { name: "алфавітом", type: "alphabet" }];
 
 const App = (props) => {
+
+
+  const dispatch = useDispatch();
+  const store = useSelector(({ items, filters }) => {
+    return {
+      items: items.items,
+    }
+  });
+
+
   React.useEffect(() => {
     axios.get('http://localhost:3000/db.json')
       .then(({ data }) => {
-        props.setItems(data.pizzas);
+        dispatch(setItems(data.pizzas));
       });
   }, []);
 
@@ -63,18 +73,18 @@ const App = (props) => {
 //   }
 // }
 
-const mapStateToProps = (state) => {
-  return {
-    items: state.items.items,
-    filters: state.filters
-  }
-};
+// const mapStateToProps = (state) => {
+//   return {
+//     items: state.items.items,
+//     filters: state.filters
+//   }
+// };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    setItems: (items) => dispatch(setItems(items)),
-  };
-};
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     setItems: (items) => dispatch(setItems(items)),
+//   };
+// };
 
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;
+//export default connect(mapStateToProps, mapDispatchToProps)(App);

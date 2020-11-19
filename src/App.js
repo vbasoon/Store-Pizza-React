@@ -16,52 +16,64 @@ const sortPopup = [{ name: "популярністю", type: "popular" },
 { name: "ціною", type: "price" },
 { name: "алфавітом", type: "alphabet" }];
 
-// function App() {
-
-//   const [pizzas, setState] = React.useState([]);
-
-//   React.useEffect(() => {
-//     axios.get('http://localhost:3000/db.json')
-//       .then(({ data }) => {
-//         setState(data.pizzas)
-//       })
-//   }, []);
-//   return;
-// }
-
-class App extends React.Component {
-
-  componentDidMount() {
+const App = (props) => {
+  React.useEffect(() => {
     axios.get('http://localhost:3000/db.json')
       .then(({ data }) => {
-        this.props.setItems(data.pizzas);
+        props.setItems(data.pizzas);
       });
-  }
+  }, []);
 
-  render() {
-    return (
-      <div className="App">
-        <div className="wrapper">
-          <Header />
+  return (
+    <div className="App">
+      <div className="wrapper">
+        <Header />
 
-          <div className="content">
-            <Route exact path="/" render={() => <Home categories={categories} sortpopup={sortPopup} items={this.props.items} />} />
-            <Route exact path="/cart" render={() => <Cart />} />
-          </div>
+        <div className="content">
+          <Route exact path="/" render={() => <Home categories={categories} sortpopup={sortPopup} items={props.items} />} />
+          <Route exact path="/cart" render={() => <Cart />} />
         </div>
       </div>
-    )
-  }
+    </div>
+  )
 }
+
+// class App extends React.Component {
+
+//   componentDidMount() {
+//     axios.get('http://localhost:3000/db.json')
+//       .then(({ data }) => {
+//         this.props.setItems(data.pizzas);
+//       });
+//   }
+
+//   render() {
+//     return (
+//       <div className="App">
+//         <div className="wrapper">
+//           <Header />
+
+//           <div className="content">
+//             <Route exact path="/" render={() => <Home categories={categories} sortpopup={sortPopup} items={this.props.items} />} />
+//             <Route exact path="/cart" render={() => <Cart />} />
+//           </div>
+//         </div>
+//       </div>
+//     )
+//   }
+// }
 
 const mapStateToProps = (state) => {
   return {
-    items: state.items.items
+    items: state.items.items,
+    filters: state.filters
   }
 };
 
-const mapDispatchToProps = {
-  setItems,
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setItems: (items) => dispatch(setItems(items)),
+  };
 };
 
 

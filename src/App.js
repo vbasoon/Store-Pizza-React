@@ -41,7 +41,9 @@ const App = () => {
         <Header />
 
         <div className="content">
-          <Route exact path="/" render={() => <Home categories={categories} sortpopup={sortPopup} items={items} />} />
+          <Route exact path="/" render={() => <Home categories={categories}
+            sortpopup={sortPopup}
+            items={items} />} />
           <Route exact path="/cart" render={() => <Cart />} />
         </div>
       </div>

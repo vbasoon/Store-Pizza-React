@@ -3,7 +3,13 @@ import React from 'react'
 import { Categories, SortBlock, PizzaBlock } from "../components";
 
 
-const Home = ({ categories, sortpopup, items }) => {
+const Home = () => {
+  const { items } = useSelector(({ items, filters }) => {
+    return {
+      items: items.items,
+      sortBy: filters.sortBy
+    }
+  });
 
   return (
     <div>

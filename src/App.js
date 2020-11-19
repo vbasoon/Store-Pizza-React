@@ -1,7 +1,7 @@
 import React from "react";
 import { Route } from "react-router";
 import axios from 'axios'
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 //import store from "./redux/store";
 import { setItems } from "./redux/actions/items";
 
@@ -20,12 +20,12 @@ const App = () => {
 
 
   const dispatch = useDispatch();
-  const { items } = useSelector(({ items, filters }) => {
-    return {
-      items: items.items,
-      sortBy: filters.sortBy
-    }
-  });
+  //const { items } = useSelector(({ items, filters }) => {
+  //  return {
+  //    items: items.items,
+  //    sortBy: filters.sortBy
+  //  }
+  //});
 
 
   React.useEffect(() => {
@@ -41,10 +41,8 @@ const App = () => {
         <Header />
 
         <div className="content">
-          <Route exact path="/" render={() => <Home categories={categories}
-            sortpopup={sortPopup}
-            items={items} />} />
-          <Route exact path="/cart" render={() => <Cart />} />
+          <Route exact path="/" component={Home} />
+          <Route exact path="/cart" component={Cart} />
         </div>
       </div>
     </div>

@@ -16,13 +16,14 @@ const sortPopup = [{ name: "популярністю", type: "popular" },
 { name: "ціною", type: "price" },
 { name: "алфавітом", type: "alphabet" }];
 
-const App = (props) => {
+const App = () => {
 
 
   const dispatch = useDispatch();
-  const store = useSelector(({ items, filters }) => {
+  const { items } = useSelector(({ items, filters }) => {
     return {
       items: items.items,
+      sortBy: filters.sortBy
     }
   });
 
@@ -40,7 +41,7 @@ const App = (props) => {
         <Header />
 
         <div className="content">
-          <Route exact path="/" render={() => <Home categories={categories} sortpopup={sortPopup} items={props.items} />} />
+          <Route exact path="/" render={() => <Home categories={categories} sortpopup={sortPopup} items={items} />} />
           <Route exact path="/cart" render={() => <Cart />} />
         </div>
       </div>

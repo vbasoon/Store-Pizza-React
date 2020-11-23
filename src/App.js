@@ -10,11 +10,11 @@ import "./App.css";
 import { Header } from "./components";
 import { Home, Cart, } from "./pages";
 
-const categories = ["М'ясні", "Вегетаріанські", "Гриль", "Гострі", "Закриті"];
+//const categories = ["М'ясні", "Вегетаріанські", "Гриль", "Гострі", "Закриті"];
 
-const sortPopup = [{ name: "популярністю", type: "popular" },
-{ name: "ціною", type: "price" },
-{ name: "алфавітом", type: "alphabet" }];
+//const sortPopup = [{ name: "популярністю", type: "popular" },
+//{ name: "ціною", type: "price" },
+//{ name: "алфавітом", type: "alphabet" }];
 
 const App = () => {
 
@@ -33,7 +33,7 @@ const App = () => {
       .then(({ data }) => {
         dispatch(setItems(data.pizzas));
       });
-  }, []);
+  });
 
   return (
     <div className="App">

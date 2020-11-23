@@ -8,5 +8,5 @@ export const setSortBy = (name) => ({
 //Action
 export const setCategory = (index) => ({
    type: 'SET_CATEGORY',
-   payload: index,
+   payload: index
 })

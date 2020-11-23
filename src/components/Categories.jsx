@@ -12,7 +12,11 @@ const Categories = ({ categories, onClickItem }) => {
     <div>
       <div className="categories">
         <ul>
-          <li className={activeItem === null ? "active" : ""}>Всi</li>
+          <li
+            className={activeItem === null ? "active" : ""}
+            onClick={() => onSelectItem(null)}
+          >Всi
+          </li>
           {categories &&
             categories.map((name, index) => (
               <li

@@ -14,9 +14,9 @@ const Home = () => {
   const dispatch = useDispatch();
   const items = useSelector(({ items }) => items.items);
 
-  const onSelectCategory = index => {
-    dispatch(setCategory(index))
-  }
+  const onSelectCategory = React.useCallback((index) => {
+    dispatch(setCategory(index));
+  }, []);
 
   return (
     <div>

@@ -27,10 +27,7 @@ const App = () => {
   //  }
   //});
   React.useEffect(() => {
-    axios.get('http://localhost:3001/db.json')
-      .then(({ data }) => {
-        dispatch(setItems(data.pizzas));
-      });
+
   });
 
   return (

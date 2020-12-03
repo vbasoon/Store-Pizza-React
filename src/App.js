@@ -1,9 +1,8 @@
 import React from "react";
-import { Route } from "react-router";
-import axios from 'axios'
+import { Route } from "react-router-dom";
 import { useDispatch } from "react-redux";
 //import store from "./redux/store";
-import { setItems } from "./redux/actions/items";
+import { fetchItems } from "./redux/actions/items";
 
 import "./App.css";
 
@@ -18,8 +17,8 @@ import { Home, Cart, } from "./pages";
 
 const App = () => {
 
-
   const dispatch = useDispatch();
+
   //const { items } = useSelector(({ items, filters }) => {
   //  return {
   //    items: items.items,
@@ -27,8 +26,9 @@ const App = () => {
   //  }
   //});
   React.useEffect(() => {
+    console.log(dispatch(fetchItems()));
 
-  });
+  }, []);
 
   return (
     <div className="App">

@@ -1,11 +1,13 @@
 import axios from 'axios'
+import { useDispatch } from "react-redux";
 
-export const fetchItems = () => {
-   axios.get('http://localhost:3001/db.json')
+export const fetchItems = () => (dispatch) => {
+   //const dispatch = useDispatch();
+   axios.get('http://localhost:3001/pizzas')
       .then(({ data }) => {
-         dispatch(setItems(data.pizzas));
-      })
-}
+         dispatch(setItems(data));
+      });
+};
 
 export const setItems = (items) => ({
    type: 'SET_PRODUCTS',

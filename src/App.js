@@ -26,15 +26,8 @@ const App = () => {
   //    sortBy: filters.sortBy
   //  }
   //});
-  window.test = () => {
-    axios.get('http://localhost:3000/db.json')
-      .then(({ data }) => {
-        dispatch(setItems(data.pizzas));
-      });
-  }
-
   React.useEffect(() => {
-    axios.get('http://localhost:3000/db.json')
+    axios.get('http://localhost:3001/db.json')
       .then(({ data }) => {
         dispatch(setItems(data.pizzas));
       });

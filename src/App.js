@@ -2,7 +2,7 @@ import React from "react";
 import { Route } from "react-router-dom";
 import { useDispatch } from "react-redux";
 //import store from "./redux/store";
-import { fetchItems } from "./redux/actions/items";
+
 
 import "./App.css";
 
@@ -25,10 +25,6 @@ const App = () => {
   //    sortBy: filters.sortBy
   //  }
   //});
-  React.useEffect(() => {
-    console.log(dispatch(fetchItems()));
-
-  }, []);
 
   return (
     <div className="App">

@@ -16,8 +16,12 @@ const Home = () => {
   const items = useSelector(({ items }) => items.items);
 
   React.useEffect(() => {
-    dispatch(fetchItems());
+    if (!items.length) {
 
+
+    }
+
+    dispatch(fetchItems());
   }, []);
 
 

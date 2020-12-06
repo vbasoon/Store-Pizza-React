@@ -1,6 +1,6 @@
 import React from "react";
 import { Route } from "react-router-dom";
-import { useDispatch } from "react-redux";
+
 //import store from "./redux/store";
 
 
@@ -17,7 +17,7 @@ import { Home, Cart, } from "./pages";
 
 const App = () => {
 
-  const dispatch = useDispatch();
+
 
   //const { items } = useSelector(({ items, filters }) => {
   //  return {

@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import ContentLoader from "react-content-loader"
+//import LoadingBlock from './LoadingBlock';
 
 
 const PizzaBlock = (props) => {
@@ -9,6 +9,10 @@ const PizzaBlock = (props) => {
    const availableSizes = [26, 30, 40];
    const [activeType, setActiveType] = React.useState(props.types[0]);
    const [activeSize, setActiveSize] = React.useState(props.sizes[0]);
+
+   //if (props.isLoading) {
+   //   return <LoadingBlock />;
+   //}
 
    const onSelectType = (index) => {
       setActiveType(index);
@@ -92,7 +96,8 @@ PizzaBlock.propTypes = {
    sizes: PropTypes.arrayOf(PropTypes.number).isRequired,
    price: PropTypes.number,
    category: PropTypes.number,
-   rating: PropTypes.number
+   rating: PropTypes.number,
+   isLoaded: PropTypes.bool
 };
 
 PizzaBlock.defauitProps = {
@@ -100,6 +105,7 @@ PizzaBlock.defauitProps = {
    price: 0,
    types: [],
    sizes: [],
+   isLoaded: false
 };
 
 export default PizzaBlock

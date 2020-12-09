@@ -38,7 +38,8 @@ const Home = () => {
       <div className="container">
         <div className="content__top">
           <Categories
-            onClickItem={onSelectCategory}
+            activeCategory={category}
+            onClickCategory={onSelectCategory}
             categories={categories}
           />
           <SortBlock sortpopup={sortPopup} />

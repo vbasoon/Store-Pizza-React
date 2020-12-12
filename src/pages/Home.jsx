@@ -42,7 +42,7 @@ const Home = () => {
             onClickCategory={onSelectCategory}
             categories={categories}
           />
-          <SortBlock sortpopup={sortPopup} />
+          <SortBlock activeSortType={sortBy} sortpopup={sortPopup} />
         </div>
         <h2 className="content__title">Всі</h2>
         <div className="content__items">

@@ -17,7 +17,7 @@ const Home = () => {
   const isLoaded = useSelector(({ items }) => items.isLoaded);
   const { category, sortBy } = useSelector(({ filters }) => filters);
 
-  console.log(category, sortBy);
+  // console.log(category, sortBy);
 
   React.useEffect(() => {
     // if (!items.length) {

@@ -3,7 +3,7 @@ import React from "react";
 
 const SortBlock = React.memo(function SortBlock({ sortpopup }) {
   const [visiblePopup, setvisiblePopup] = React.useState(false);
-  const [activeItem, setActiveItem] = React.useState(0);
+  const [activeItem, setActiveItem] = React.useState(0); // remove this
   const sortRef = React.useRef();
   const activeLabel = sortpopup[activeItem].name;
 

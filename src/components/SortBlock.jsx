@@ -71,7 +71,7 @@ const SortBlock = React.memo(function SortBlock({ sortpopup, activeSortType, onC
 
 SortBlock.propTypes = {
   activeSortType: PropTypes.string.isRequired,
-  sortpopup: PropTypes.arrayOf(PropTypes.object).isRequired,
+  sortpopup: PropTypes.arrayOf(PropTypes.string).isRequired,
   onClickSortType: PropTypes.func
 };
 

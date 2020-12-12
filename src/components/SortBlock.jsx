@@ -1,7 +1,7 @@
 import React from "react";
 
 
-const SortBlock = React.memo(function SortBlock({ sortpopup }) {
+const SortBlock = React.memo(function SortBlock({ sortpopup, activeSortType, onClickSortType }) {
   const [visiblePopup, setvisiblePopup] = React.useState(false);
   //const [activeItem, setActiveItem] = React.useState(0); // remove this
   const sortRef = React.useRef();
@@ -18,8 +18,9 @@ const SortBlock = React.memo(function SortBlock({ sortpopup }) {
     }
   };
 
+  //this control for rendering popup
   const onSelectItem = (index) => {
-    setActiveItem(index);
+    onClickSortType(index);
     setvisiblePopup(false);
   };
 

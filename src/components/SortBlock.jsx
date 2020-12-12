@@ -5,7 +5,7 @@ const SortBlock = React.memo(function SortBlock({ sortpopup, activeSortType, onC
   const [visiblePopup, setvisiblePopup] = React.useState(false);
   //const [activeItem, setActiveItem] = React.useState(0); // remove this
   const sortRef = React.useRef();
-  const activeLabel = sortpopup[activeItem].name;
+  const activeLabel = sortpopup[activeSortType].name;
 
   const toggleVisiblePopup = () => {
     setvisiblePopup(!visiblePopup);
@@ -55,7 +55,7 @@ const SortBlock = React.memo(function SortBlock({ sortpopup, activeSortType, onC
               {sortpopup &&
                 sortpopup.map((obj, index) => (
                   <li onClick={() => onSelectItem(index)}
-                    className={activeItem === index ? "active" : ""}
+                    className={activeSortType === index ? "active" : ""}
                     key={`${obj.type}_${index}`}
                   >
                     {obj.name}

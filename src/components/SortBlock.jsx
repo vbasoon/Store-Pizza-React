@@ -54,7 +54,7 @@ const SortBlock = React.memo(function SortBlock({ sortpopup, activeSortType, onC
             <ul>
               {sortpopup &&
                 sortpopup.map((obj, index) => (
-                  <li onClick={() => onSelectItem(obj.type)}
+                  <li onClick={() => onSelectItem(obj)}
                     className={activeSortType === obj.type ? "active" : ""}
                     key={`${obj.type}_${index}`}
                   >

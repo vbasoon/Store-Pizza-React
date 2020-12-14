@@ -7,9 +7,9 @@ import { fetchItems } from "../redux/actions/items";
 
 const categories = ["М'ясні", "Вегетаріанські", "Гриль", "Гострі", "Закриті"];
 
-const sortPopup = [{ name: "популярністю", type: "popular" },
-{ name: "ціною", type: "price" },
-{ name: "алфавітом", type: "alphabet" }];
+const sortPopup = [{ name: "популярністю", type: "popular", order: 'desc' },
+{ name: "ціною", type: "price", order: 'asc' },
+{ name: "алфавітом", type: "name", order: 'asc' }];
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -47,7 +47,7 @@ const Home = () => {
             onClickCategory={onSelectCategory}
             categories={categories}
           />
-          <SortBlock activeSortType={sortBy} sortpopup={sortPopup} onClickSortType={onSelectSortTypes} />
+          <SortBlock activeSortType={sortBy.type} sortpopup={sortPopup} onClickSortType={onSelectSortTypes} />
         </div>
         <h2 className="content__title">Всі</h2>
         <div className="content__items">

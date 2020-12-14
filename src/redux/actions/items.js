@@ -8,10 +8,10 @@ export const fetchItems = (category, sortBy) => (dispatch) => {
       payload: false
    });
 
-   axios.
-      get(
+   axios
+      .get(
          `http://localhost:3001/pizzas?${category !== null ? `category=${category}` : ' '
-         }&_sort=${sortBy}&_order=desc`)
+         }&_sort=${sortBy}&_order=${sortBy.order}`)
       .then(({ data }) => {
          dispatch(setItems(data));
       });

@@ -7,9 +7,11 @@ import { fetchItems } from "../redux/actions/items";
 
 const categories = ["М'ясні", "Вегетаріанські", "Гриль", "Гострі", "Закриті"];
 
-const sortPopup = [{ name: "популярністю", type: "popular", order: 'desc' },
-{ name: "ціною", type: "price", order: 'asc' },
-{ name: "алфавітом", type: "name", order: 'asc' }];
+const sortPopup = [
+  { name: "популярністю", type: "popular", order: 'desc' },
+  { name: "ціною", type: "price", order: 'asc' },
+  { name: "алфавітом", type: "name", order: 'asc' },
+];
 
 const Home = () => {
   const dispatch = useDispatch();

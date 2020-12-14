@@ -25,8 +25,8 @@ const Home = () => {
 
     // }
 
-    dispatch(fetchItems());
-  }, [category]);
+    dispatch(fetchItems(category, sortBy));
+  }, [category, sortBy]);
 
 
   const onSelectCategory = React.useCallback((index) => {

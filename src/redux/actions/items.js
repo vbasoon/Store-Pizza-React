@@ -6,9 +6,11 @@ export const setLoaded = (payload) => ({
 });
 //import { useDispatch } from "react-redux";
 
-export const fetchItems = () => (dispatch) => {
+export const fetchItems = (category, sortBy) => (dispatch) => {
+   console.log(category, sortBy);
+
    dispatch(setLoaded(false));
-   axios.get('http://localhost:3001/pizzas')
+   axios.get(`http://localhost:3001/pizzas`)
       .then(({ data }) => {
          dispatch(setItems(data));
       });

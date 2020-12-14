@@ -5,7 +5,7 @@ const SortBlock = React.memo(function SortBlock({ sortpopup, activeSortType, onC
   const [visiblePopup, setvisiblePopup] = React.useState(false);
   //const [activeItem, setActiveItem] = React.useState(0); // remove this
   const sortRef = React.useRef();
-  const activeLabel = sortpopup.find(obj => obj.type == activeSortType).name;// add find()
+  const activeLabel = sortpopup.find(obj => obj.type === activeSortType).name;// add find()
 
   const toggleVisiblePopup = () => {
     setvisiblePopup(!visiblePopup);
@@ -71,7 +71,7 @@ const SortBlock = React.memo(function SortBlock({ sortpopup, activeSortType, onC
 
 SortBlock.propTypes = {
   activeSortType: PropTypes.string.isRequired,
-  sortpopup: PropTypes.arrayOf(PropTypes.string).isRequired,
+  sortpopup: PropTypes.arrayOf(PropTypes.object).isRequired,
   onClickSortType: PropTypes.func
 };
 

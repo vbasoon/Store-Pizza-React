@@ -1,16 +1,17 @@
 import axios from 'axios'
 
-export const setLoaded = (payload) => ({
-   type: 'SET_LOADING',
-   payload,
-});
-//import { useDispatch } from "react-redux";
-
 export const fetchItems = (category, sortBy) => (dispatch) => {
    console.log(category, sortBy);
 
-   dispatch(setLoaded(false));
-   axios.get(`http://localhost:3001/pizzas`)
+   dispatch({
+      type: 'SET_LOADING',
+      payload: false
+   });
+
+   axios.
+      get(
+         `http://localhost:3001/pizzas?${category !== null ? `category=${category}` : ' '
+         }&_sort=${sortBy}&_order=desc`)
       .then(({ data }) => {
          dispatch(setItems(data));
       });

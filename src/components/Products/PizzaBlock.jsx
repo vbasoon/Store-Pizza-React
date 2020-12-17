@@ -2,6 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 //import LoadingBlock from './LoadingBlock';
+import Button from '../Button';
 
 
 const PizzaBlock = (props) => {
@@ -64,7 +65,7 @@ const PizzaBlock = (props) => {
             </div>
             <div className="pizza-block__bottom">
                <div className="pizza-block__price">від {props.price} грн.</div>
-               <div className="button button--outline button--add">
+               <Button className="button--add" outline>
                   <svg
                      width="12"
                      height="12"
@@ -79,7 +80,7 @@ const PizzaBlock = (props) => {
                   </svg>
                   <span>Додати</span>
                   <i>2</i>
-               </div>
+               </Button>
             </div>
          </div>{" "}
 

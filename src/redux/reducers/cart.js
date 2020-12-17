@@ -1,9 +1,7 @@
 const initialState = {
-   category: null,
-   sortBy: {
-      type: 'popular',
-      order: 'desc'
-   }
+   items: {},
+   totalPrice: 0,
+   totalCount: 0
 }
 
 const cart = (state = initialState, action) => {
@@ -13,14 +11,12 @@ const cart = (state = initialState, action) => {
          return {
             ...state,
             totalPrice: action.payload,
-            // isLoaded: true
          };
 
       case 'SET_TOTAL_COUNT':
          return {
             ...state,
             totalCount: action.payload,
-            // isLoaded: true
          };
 
       default:

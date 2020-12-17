@@ -1,16 +1,32 @@
-store.dispatch({
-   type: 'SE_SORT_BY',
-   payload: 'price'
-})
+const initialState = {
+   category: null,
+   sortBy: {
+      type: 'popular',
+      order: 'desc'
+   }
+}
 
-const inc = () => {
-   store.dispatch({
-      type: 'Додати',
-   });
-};
+const cart = (state = initialState, action) => {
 
-store.subscribe(() => {
-   console.log('Cтан змінений', store.getState());
+   switch (action.type) {
+      case 'SET_TOTAL_PRICE':
+         return {
+            ...state,
+            totalPrice: action.payload,
+            // isLoaded: true
+         };
 
-})
+      case 'SET_TOTAL_COUNT':
+         return {
+            ...state,
+            totalCount: action.payload,
+            // isLoaded: true
+         };
 
+      default:
+         return state;
+   }
+}
+
+
+export default cart;

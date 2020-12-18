@@ -65,7 +65,7 @@ const PizzaBlock = (props) => {
             </div>
             <div className="pizza-block__bottom">
                <div className="pizza-block__price">від {props.price} грн.</div>
-               <Button className="button--add" outline>
+               <Button onClick={() => props.onClickAddProduct({ props })} className="button--add" outline>
                   <svg
                      width="12"
                      height="12"
@@ -98,7 +98,8 @@ PizzaBlock.propTypes = {
    price: PropTypes.number,
    category: PropTypes.number,
    rating: PropTypes.number,
-   isLoaded: PropTypes.bool
+   isLoaded: PropTypes.bool,
+   onClickAddProduct: PropTypes.func
 };
 
 PizzaBlock.defauitProps = {

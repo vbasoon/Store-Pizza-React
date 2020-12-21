@@ -9,7 +9,7 @@ const PizzaBlock = (props) => {
    const typesNames = ['тонке', 'традиційне'];
    const availableSizes = [26, 30, 40];
    const [activeType, setActiveType] = React.useState(props.types[0]);
-   const [activeSize, setActiveSize] = React.useState(props.sizes[0]);
+   const [activeSize, setActiveSize] = React.useState(0);
 
    //if (props.isLoading) {
    //   return <LoadingBlock />;

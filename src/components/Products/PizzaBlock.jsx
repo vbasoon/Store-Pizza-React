@@ -23,7 +23,9 @@ const PizzaBlock = (props) => {
       setActiveSize(index);
    };
 
-
+   const onAddPizza = () => {
+      props.onClickAddProduct({ props })
+   }
    return (
       <div>
          <div className="pizza-block">
@@ -65,7 +67,7 @@ const PizzaBlock = (props) => {
             </div>
             <div className="pizza-block__bottom">
                <div className="pizza-block__price">від {props.price} грн.</div>
-               <Button onClick={() => props.onClickAddProduct({ props })} className="button--add" outline>
+               <Button onClick={onAddPizza} className="button--add" outline>
                   <svg
                      width="12"
                      height="12"

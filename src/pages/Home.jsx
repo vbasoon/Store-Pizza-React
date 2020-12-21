@@ -40,8 +40,11 @@ const Home = () => {
     dispatch(setSortBy(type));
   }, []);
 
-  const addProductToCart = obj => {
-    console.log(obj);
+  const handleAddProductToCart = (obj) => {
+    dispatch({
+      type: 'ADD_PRODUCT_CART',
+      payload: obj,
+    });
   }
 
   return (
@@ -59,7 +62,7 @@ const Home = () => {
         <div className="content__items">
           {isLoaded
             ? items.map((obj) => (
-              <PizzaBlock onClickAddProduct={addProductToCart} key={obj.id} {...obj} isLoaded={true} />
+              <PizzaBlock onClickAddProduct={handleAddProductToCart} key={obj.id} {...obj} isLoaded={true} />
             ))
             : Array(12)
               .fill(0)

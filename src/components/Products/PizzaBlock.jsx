@@ -24,7 +24,15 @@ const PizzaBlock = (props) => {
    };
 
    const onAddPizza = () => {
-      props.onClickAddProduct({ props })
+      const obj = {
+         id: props.id,
+         name: props.name,
+         imageUrl: props.imageUrl,
+         price: props.price,
+         size: activeSize,
+         type: activeType
+      }
+      props.onClickAddProduct(obj)
    }
    return (
       <div>

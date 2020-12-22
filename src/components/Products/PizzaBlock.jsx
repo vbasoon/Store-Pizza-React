@@ -66,7 +66,7 @@ const PizzaBlock = (props) => {
                            active: activeSize === index,
                            disabled: !props.sizes.includes(size),
                         })}
-                     >{size} cm.</li>
+                     >{size} cm. </li>
                   ))}
                   {/* <li className="active">26 см.</li>
                   <li className="disabled">30 см.</li>

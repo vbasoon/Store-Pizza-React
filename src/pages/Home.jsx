@@ -17,6 +17,7 @@ const sortPopup = [
 const Home = () => {
   const dispatch = useDispatch();
   const items = useSelector(({ items }) => items.items);
+  const cartItems = useSelector(({ cart }) => cart.items);
   const isLoaded = useSelector(({ items }) => items.isLoaded);
   const { category, sortBy } = useSelector(({ filters }) => filters);
 
@@ -62,7 +63,12 @@ const Home = () => {
         <div className="content__items">
           {isLoaded
             ? items.map((obj) => (
-              <PizzaBlock onClickAddProduct={handleAddProductToCart} key={obj.id} {...obj} isLoaded={true} />
+              <PizzaBlock
+                onClickAddProduct={handleAddProductToCart}
+                key={obj.id}
+                addedCount={cartItems[obj.id] && cartItems[obj.id].length}
+                {...obj}
+              />
             ))
             : Array(12)
               .fill(0)

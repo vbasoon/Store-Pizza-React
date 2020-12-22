@@ -89,7 +89,7 @@ const PizzaBlock = (props) => {
                      />
                   </svg>
                   <span>Додати</span>
-                  <i>2</i>
+                  {props.addedCount && <i>{props.addedCount}</i>}
                </Button>
             </div>
          </div>{" "}
@@ -109,7 +109,8 @@ PizzaBlock.propTypes = {
    category: PropTypes.number,
    rating: PropTypes.number,
    isLoaded: PropTypes.bool,
-   onClickAddProduct: PropTypes.func
+   onClickAddProduct: PropTypes.func,
+   addedCount: PropTypes.number
 };
 
 PizzaBlock.defauitProps = {

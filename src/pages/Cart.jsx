@@ -36,7 +36,12 @@ const Cart = () => {
                   {
                      groupProducts.map(obj => (
                         // const groupPrice =
-                        <CartItem name={obj.name} type={obj.type} size={obj.size} totalPrice={items[obj.id].totalPrice} />
+                        <CartItem
+                           name={obj.name}
+                           type={obj.type}
+                           size={obj.size}
+                           totalPrice={items[obj.id].totalPrice}
+                           totalCount={items[obj.id].items.length} />
                      ))
                   }
 

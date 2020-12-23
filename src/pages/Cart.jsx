@@ -13,7 +13,9 @@ const Cart = () => {
    });
 
    const onClearCart = () => {
-      dispatch(clearCart());
+      if (window.confirm("Are you sure?")) {
+         dispatch(clearCart());
+      }
    }
 
 

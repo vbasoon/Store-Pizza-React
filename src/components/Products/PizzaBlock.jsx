@@ -29,7 +29,7 @@ const PizzaBlock = (props) => {
          name: props.name,
          imageUrl: props.imageUrl,
          price: props.price,
-         size: activeSize,
+         size: availableSizes[activeSize],
          type: typesNames[activeType]
       }
       props.onClickAddProduct(obj)

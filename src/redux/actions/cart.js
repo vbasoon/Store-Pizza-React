@@ -6,3 +6,8 @@ export const addProductToCart = (productObj) => ({
 export const clearCart = () => ({
    type: 'CLEAR_CART',
 })
+
+export const removeGroup = (id) => ({
+   type: 'REMOVE_GROUP',
+   payload: id
+})

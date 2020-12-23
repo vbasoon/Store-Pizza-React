@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import CartItem from '../components/CartItem';
-import { clearCart } from '../redux/actions/cart'
+import { clearCart, removeGroup } from '../redux/actions/cart'
 
 const Cart = () => {
    const dispatch = useDispatch();
@@ -14,8 +14,14 @@ const Cart = () => {
    });
 
    const onClearCart = () => {
-      if (window.confirm("Are you sure?")) {
+      if (window.confirm("Are you crazy?")) {
          dispatch(clearCart());
+      }
+   }
+
+   const onRemoveGroup = (id) => {
+      if (window.confirm("Are you sure?")) {
+         dispatch(removeGroup(id));
       }
    }
 
@@ -48,11 +54,14 @@ const Cart = () => {
                            groupProducts.map(obj => (
                               // const groupPrice =
                               <CartItem
+                                 id={obj.id}
                                  name={obj.name}
                                  type={obj.type}
                                  size={obj.size}
                                  totalPrice={items[obj.id].totalPrice}
-                                 totalCount={items[obj.id].items.length} />
+                                 totalCount={items[obj.id].items.length}
+                                 onRemove={onRemoveGroup}
+                              />
                            ))
                         }
                      </div>
@@ -77,14 +86,14 @@ const Cart = () => {
                      </div>
                   </div>)
                   : (
-                     <div class="cart cart--empty">
-                        <h2>Кошик порожній <icon>😕</icon></h2>
+                     <div className="cart cart--empty">
+                        <h2>Кошик порожній</h2>
                         <p>
                            Напевно, ви не замовили піццу.<br />
                        Щоб замовити піццу, перейдіть назад до головної сторінки.
                      </p>
                         <img src="/img/empty-cart.png" alt="Empty cart" />
-                        <Link to="/" class="button button--black">
+                        <Link to="/" className="button button--black">
                            <span>Повернутись на головну</span>
                         </Link>
                      </div>

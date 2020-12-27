@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import CartItem from '../components/CartItem';
-import { clearCart, removeGroup } from '../redux/actions/cart'
+import { clearCart, removeGroup, addToGroup, removeFromGroup } from '../redux/actions/cart'
 
 const Cart = () => {
    const dispatch = useDispatch();
@@ -23,6 +23,14 @@ const Cart = () => {
       if (window.confirm("Are you sure?")) {
          dispatch(removeGroup(id));
       }
+   }
+
+   const onAddToGroup = (id) => {
+      dispatch(addToGroup(id));
+   }
+
+   const onRemoveFromGroup = (id) => {
+      dispatch(removeFromGroup(id));
    }
 
    return (
@@ -62,6 +70,8 @@ const Cart = () => {
                                  totalPrice={items[obj.id].totalPrice}
                                  totalCount={items[obj.id].items.length}
                                  onRemove={onRemoveGroup}
+                                 onAddTo={onAddToGroup}
+                                 onRemoveFrom={onRemoveFromGroup}
                               />
                            ))
                         }

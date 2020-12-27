@@ -4,7 +4,7 @@ import { Categories, SortBlock, PizzaBlock, PizzaLoadingBlock } from "../compone
 import { useSelector, useDispatch } from "react-redux";
 import { setCategory, setSortBy } from '../redux/actions/filters'
 import { fetchItems } from "../redux/actions/items";
-import { addProductToCart } from '../redux/actions/cart';
+//import { addProductToCart } from '../redux/actions/cart';
 
 const categories = ["М'ясні", "Вегетаріанські", "Гриль", "Гострі", "Закриті"];
 
